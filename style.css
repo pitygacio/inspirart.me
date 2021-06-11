@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'Merriweather-Bold';
+    src: url('font/Merriweather-Bold.ttf') format('truetype');
+
+    font-family: 'Merriweather-Black';
+    src: url('font/Merriweather-Black.ttf') format('truetype');
+}
+
+
+body {
+    background-color: #35363a;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;   
+
+    min-height: 100vh;
+
+    --pastel-1: #eaadad;
+    --pastel-2: #ead5ad;
+    --pastel-3: #cceaad;
+    --pastel-4: #adeac9;
+    --pastel-5: #ade3ea;
+    --pastel-6: #adcdea;
+    --pastel-7: #b6adea;
+    --pastel-8: #deadea;
+    --pastel-9: #eaadd2;
+
+    --default-color: #d19494;
+    --hover-color: #c28383;
+    --onClick-color: #bb7777;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+h1 {
+    font-family: 'Merriweather-Black', Fallback, serif;
+    font-size: 4.5em;
+    text-align: center;
+    color: var(--pastel-1);
+
+
+    margin-bottom: 0;
+}
+
+p {
+    font-family: 'Merriweather-Black', Fallback, serif;
+    text-align: center;
+    color: #fff;
+}
+
+#description {
+    align-self: center;
+    width: 50%;
+}
+
+#description > p {
+    font-size: 1.1em;
+}
+
+
+#prompts {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-self: center;
+
+    width: 92%;
+
+    margin: 1% 0 4% 0;
+}
+
+.prompt {
+    width: 22%;
+}
+
+.prompt > p {
+    font-size: 1.5em;
+}
+
+
+.first-prompt {
+    border-bottom: 1px solid var(--pastel-1);
+    padding-bottom: 6%;
+}
+
+.second-prompt {
+    border-bottom: 1px solid var(--pastel-5);
+    padding-bottom: 6%;
+}
+
+.third-prompt {
+    border-bottom: 1px solid var(--pastel-7);
+    padding-bottom: 6%;
+}
+
+.button {
+    font-family: 'Merriweather-Black', Fallback, serif;
+    font-size: 1.8em;
+    text-align: center;
+    color: #fff;
+
+    background-color: var(--default-color);
+
+    box-shadow: 5.03049px 5.03049px #BB7777;
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+
+    align-self: center;
+    height: 70px;
+    width: 300px;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+
+}
+
+.button:active {
+    background: var(--onClick-color);
+    box-shadow: 1px 1px var(--onClick-color) ;
+    margin: .1em 0 0 .1em;
+}
+
+
+.color1 {
+    color: var(--pastel-1);
+}
+
+.color2 {
+    color: var(--pastel-2);
+}
+
+.color3 {
+    color: var(--pastel-3);
+}
+
+.color4 {
+    color: var(--pastel-4);
+}
+
+.color5 {
+    color: var(--pastel-5);
+}
+
+.color6 {
+    color: var(--pastel-6);
+}
+
+.color7 {
+    color: var(--pastel-7);
+}
+
+.color8 {
+    color: var(--pastel-8);
+}
+
+.color9 {
+    color: var(--pastel-9);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex: 1;
+    align-items: flex-end;
+}
+
+footer > p {
+    font-size: .8em;
+}
+
+a {
+    color: var(--pastel-6);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--pastel-5);
+}
+
+/* Devices - mobile */
+
+/* @media (min-width: 200px) and (max-width: 500px) {
+
+    h1 {
+        font-size: 10.5em;
+    }
+
+    #description {
+        width: 80%;
+        margin-top: 1%;
+    }
+
+    #description > p {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-family: 'Merriweather-Bold', Fallback, serif;
+    }
+
+    #prompts {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+
+    .prompt {
+        width: auto;
+        height: 10vh;
+    }
+
+    .prompt > p {
+        font-size: 2.4em;
+    }
+
+    .button {
+        font-size: 3.5em;
+        height: 8vh;
+        width: 60%;
+        border-radius: 100px;
+        margin-top: 5vh;
+    }
+
+    footer > p {
+        font-size: 2em;
+    }
+
+} */
+
+@media only screen 
+  and (min-device-width: 280px)
+  and (max-device-width: 500px) {
+
+    h1 {
+        font-size: 10.5em;
+    }
+
+    #description {
+        width: 80%;
+        margin-top: 1%;
+    }
+
+    #description > p {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-family: 'Merriweather-Bold', Fallback, serif;
+    }
+
+    #prompts {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        margin-bottom: 8vh;
+    }
+
+    .prompt {
+        width: auto;
+        height: 10vh;
+    }
+
+    .prompt > p {
+        font-size: 2.4em;
+    }
+
+    .button {
+        font-size: 3.5em;
+        height: 8vh;
+        width: 60%;
+        border-radius: 100px;
+    }
+
+    /* .button:active {
+        margin: auto;
+    } */
+
+    footer > p {
+        font-size: 2em;
+    }
+    
+  }
+
+  /* Devices - tablet */
+  @media only screen 
+  and (min-device-width: 800px) 
+  and (max-device-width: 1024px) {
+
+    p {
+        font-size: 1.7em;
+        font-family: 'Merriweather-Bold', Fallback, serif;
+    }
+
+    .prompt {
+        width: auto;
+    }
+    
+    #description {
+        width: 75%;
+        margin-top: 1%;
+        font-size: .7em;
+    }
+
+    .button {
+        border-radius: 100px;
+    }
+   
+  }
