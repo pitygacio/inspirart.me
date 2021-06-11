@@ -11,7 +11,14 @@ window.addEventListener("load", async () => {
   const adjectives = adjectivesStr.split(/\n/);
   const adverbs = adverbsStr.split(/\n/);
 
-  document.querySelector("#inspireMe").addEventListener("click", () => {
+  let autoRotate = true;
+
+  document.querySelector("#firstPrompt").style.opacity = "50%";
+  document.querySelector("#secondPrompt").style.opacity = "50%";
+  document.querySelector("#thirdPrompt").style.opacity = "50%";
+
+  const rotate = () => {
+    if (!autoRotate) return;
     const firstPrompt =
       adjectives[Math.floor(Math.random() * adjectives.length)];
     const secondPrompt = nouns[Math.floor(Math.random() * nouns.length)];
@@ -20,5 +27,24 @@ window.addEventListener("load", async () => {
     document.querySelector("#firstPrompt").innerHTML = firstPrompt;
     document.querySelector("#secondPrompt").innerHTML = secondPrompt;
     document.querySelector("#thirdPrompt").innerHTML = thirdPrompt;
+  };
+
+  const h = setInterval(rotate, 100);
+
+  document.querySelector("#inspireMe").addEventListener("click", () => {
+    autoRotate = false;
+    clearInterval(h);
+    const firstPrompt =
+      adjectives[Math.floor(Math.random() * adjectives.length)];
+    const secondPrompt = nouns[Math.floor(Math.random() * nouns.length)];
+    const thirdPrompt = adverbs[Math.floor(Math.random() * adverbs.length)];
+
+    document.querySelector("#firstPrompt").innerHTML = firstPrompt;
+    document.querySelector("#secondPrompt").innerHTML = secondPrompt;
+    document.querySelector("#thirdPrompt").innerHTML = thirdPrompt;
+
+    document.querySelector("#firstPrompt").style.opacity = "100%";
+    document.querySelector("#secondPrompt").style.opacity = "100%";
+    document.querySelector("#thirdPrompt").style.opacity = "100%";
   });
 });
