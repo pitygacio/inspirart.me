@@ -188,55 +188,6 @@ a:hover {
 
 /* Devices - mobile */
 
-/* @media (min-width: 200px) and (max-width: 500px) {
-
-    h1 {
-        font-size: 10.5em;
-    }
-
-    #description {
-        width: 80%;
-        margin-top: 1%;
-    }
-
-    #description > p {
-        font-size: 1.4em;
-    }
-
-    p {
-        font-family: 'Merriweather-Bold', Fallback, serif;
-    }
-
-    #prompts {
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-    }
-
-    .prompt {
-        width: auto;
-        height: 10vh;
-    }
-
-    .prompt > p {
-        font-size: 2.4em;
-    }
-
-    .button {
-        font-size: 3.5em;
-        height: 8vh;
-        width: 60%;
-        border-radius: 100px;
-        margin-top: 5vh;
-    }
-
-    footer > p {
-        font-size: 2em;
-    }
-
-} */
-
 @media only screen 
   and (min-device-width: 280px)
   and (max-device-width: 500px) {
@@ -252,10 +203,6 @@ a:hover {
 
     #description > p {
         font-size: 1.4em;
-    }
-
-    p {
-        font-family: 'Merriweather-Bold', Fallback, serif;
     }
 
     #prompts {
@@ -282,10 +229,6 @@ a:hover {
         border-radius: 100px;
     }
 
-    /* .button:active {
-        margin: auto;
-    } */
-
     footer > p {
         font-size: 2em;
     }
@@ -296,11 +239,6 @@ a:hover {
   @media only screen 
   and (min-device-width: 800px) 
   and (max-device-width: 1024px) {
-
-    p {
-        font-size: 1.7em;
-        font-family: 'Merriweather-Bold', Fallback, serif;
-    }
 
     .prompt {
         width: auto;
