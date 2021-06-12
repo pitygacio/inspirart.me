@@ -115,6 +115,7 @@ p {
     align-self: center;
     height: 70px;
     width: 300px;
+    user-select: none;
 }
 
 .button:hover {
@@ -202,7 +203,7 @@ a:hover {
     }
 
     #description > p {
-        font-size: 1.4em;
+        font-size: 1.5em;
     }
 
     #prompts {
