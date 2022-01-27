@@ -12,6 +12,8 @@ window.addEventListener("load", async () => {
   const adverbs = adverbsStr.split(/\n/);
 
   let autoRotate = true;
+  let keepRotating = [true, true, true];
+  let isStopping = false;
 
   document.querySelector("#firstPrompt").style.opacity = "50%";
   document.querySelector("#secondPrompt").style.opacity = "50%";
@@ -19,32 +21,59 @@ window.addEventListener("load", async () => {
 
   const rotate = () => {
     if (!autoRotate) return;
+
     const firstPrompt =
       adjectives[Math.floor(Math.random() * adjectives.length)];
     const secondPrompt = nouns[Math.floor(Math.random() * nouns.length)];
     const thirdPrompt = adverbs[Math.floor(Math.random() * adverbs.length)];
 
-    document.querySelector("#firstPrompt").innerHTML = firstPrompt;
-    document.querySelector("#secondPrompt").innerHTML = secondPrompt;
-    document.querySelector("#thirdPrompt").innerHTML = thirdPrompt;
+    const [first, second, third] = keepRotating;
+
+    first && (document.querySelector("#firstPrompt").innerHTML = firstPrompt);
+    second &&
+      (document.querySelector("#secondPrompt").innerHTML = secondPrompt);
+    third && (document.querySelector("#thirdPrompt").innerHTML = thirdPrompt);
   };
 
-  const h = setInterval(rotate, 100);
+  let h = setInterval(rotate, 100);
 
   document.querySelector("#inspireMe").addEventListener("click", () => {
-    autoRotate = false;
-    clearInterval(h);
-    const firstPrompt =
-      adjectives[Math.floor(Math.random() * adjectives.length)];
-    const secondPrompt = nouns[Math.floor(Math.random() * nouns.length)];
-    const thirdPrompt = adverbs[Math.floor(Math.random() * adverbs.length)];
+    if (isStopping) {
+      return;
+    }
 
-    document.querySelector("#firstPrompt").innerHTML = firstPrompt;
-    document.querySelector("#secondPrompt").innerHTML = secondPrompt;
-    document.querySelector("#thirdPrompt").innerHTML = thirdPrompt;
+    document.querySelector("#firstPrompt").style.opacity = "50%";
+    document.querySelector("#secondPrompt").style.opacity = "50%";
+    document.querySelector("#thirdPrompt").style.opacity = "50%";
 
-    document.querySelector("#firstPrompt").style.opacity = "100%";
-    document.querySelector("#secondPrompt").style.opacity = "100%";
-    document.querySelector("#thirdPrompt").style.opacity = "100%";
+    h = h || setInterval(rotate, 100);
+    isStopping = true;
+    keepRotating = [true, true, true];
+
+    setTimeout(() => {
+      keepRotating[0] = false;
+      const firstPrompt =
+        adjectives[Math.floor(Math.random() * adjectives.length)];
+      document.querySelector("#firstPrompt").innerHTML = firstPrompt;
+      document.querySelector("#firstPrompt").style.opacity = "100%";
+
+      setTimeout(() => {
+        keepRotating[1] = false;
+        const secondPrompt = nouns[Math.floor(Math.random() * nouns.length)];
+        document.querySelector("#secondPrompt").innerHTML = secondPrompt;
+        document.querySelector("#secondPrompt").style.opacity = "100%";
+
+        setTimeout(() => {
+          keepRotating[2] = false;
+          const thirdPrompt =
+            adverbs[Math.floor(Math.random() * adverbs.length)];
+          document.querySelector("#thirdPrompt").innerHTML = thirdPrompt;
+          document.querySelector("#thirdPrompt").style.opacity = "100%";
+
+          isStopping = false;
+          h = clearInterval(h);
+        }, 500);
+      }, 500);
+    }, 500);
   });
 });
