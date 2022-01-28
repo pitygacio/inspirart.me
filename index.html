@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/png" href="favicon.png"/>
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />        
-        <title>inspirart.me</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>inspirart.me</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3CWNV0E6E8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    </head>
-    <body>
+      gtag("config", "G-3CWNV0E6E8");
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span class="color1">i</span><span class="color2">n</span
+        ><span class="color3">s</span><span class="color4">p</span
+        ><span class="color5">i</span><span class="color6">r</span
+        ><span class="color7">a</span><span class="color8">r</span
+        ><span class="color9">t</span>
+      </h1>
+      <div id="description">
+        <!-- <p>✨ Coming soon ✨</p> -->
+        <p>
+          Do you want to draw, write, or just create but can’t seem to get any
+          inspiration? Let us spark your creativity ✨
+        </p>
+      </div>
+    </header>
 
-        <header>
-            <h1><span class="color1">i</span><span class="color2">n</span><span class="color3">s</span><span class="color4">p</span><span class="color5">i</span><span class="color6">r</span><span class="color7">a</span><span class="color8">r</span><span class="color9">t</span></h1>
-            <div id="description">
-               <!-- <p>✨ Coming soon ✨</p> -->
-                 <p>Do you want to draw, write, or just create but can’t seem to get any inspiration? Let us spark your creativity ✨</p> 
-            </div>
-        </header>
+    <div id="prompts">
+      <span class="prompt"
+        ><p id="firstPrompt" class="first-prompt">Abandoned</p></span
+      >
+      <span class="prompt"
+        ><p id="secondPrompt" class="second-prompt">Caterpillar</p></span
+      >
+      <span class="prompt"
+        ><p id="thirdPrompt" class="third-prompt">On some planet</p></span
+      >
+    </div>
 
-        <div id="prompts">
-            <span class="prompt"><p id="firstPrompt" class="first-prompt">Abandoned</p></span>
-            <span class="prompt"><p id="secondPrompt" class="second-prompt">Caterpillar</p></span>
-            <span class="prompt"><p id="thirdPrompt" class="third-prompt">On some planet</p></span>
-        </div>
-
-        <button id="inspireMe" class="button" type="button">
-            inspire me
-        </button>
+    <button id="inspireMe" class="button" type="button">inspire me</button>
 
     <footer>
-        <p>Designed by <a href="http://www.linkedin.com/in/priscilagacio" target="_blank" title="link to Priscila's LinkedIn profile">Priscila Gacio ✨</a></p>
+      <p>
+        Designed by
+        <a
+          href="http://www.linkedin.com/in/priscilagacio"
+          target="_blank"
+          title="link to Priscila's LinkedIn profile"
+          >Priscila Gacio ✨</a
+        >
+      </p>
     </footer>
     <script src="app.js"></script>
-    </body>
+  </body>
 </html>
