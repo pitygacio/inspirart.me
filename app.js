@@ -37,9 +37,17 @@ window.addEventListener("load", async () => {
 
   let h = setInterval(rotate, 100);
 
+  let timestamp = Date.now();
+
   document.querySelector("#inspireMe").addEventListener("click", () => {
     if (isStopping) {
+      gtag("event", "clickInspireButtonWhileSpinning");
       return;
+    } else {
+      gtag("event", "clickInspireButton", {
+        event_value: Math.round((Date.now() - timestamp) / 1000),
+      });
+      timestamp = Date.now();
     }
 
     document.querySelector("#firstPrompt").style.opacity = "50%";
